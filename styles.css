@@ -1,0 +1,504 @@
+/* 기본 레이아웃 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    padding-top: 80px;
+    /* 헤더 고정 시 내용이 가려지지 않도록 여백 추가 */
+    color: #333;
+    /* 기본 텍스트 색상 */
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    border-bottom: 2px solid #ddd;
+    /* 헤더 하단 경계선 */
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* 메인 컨텐츠 스타일 */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* 각 섹션 스타일 */
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.vision-text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.vision-text2 {
+    font-size: 1.5rem;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.text {
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding-right: 30px;
+    max-width: 900px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #999999;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #555;
+}
+
+/* 이미지 스타일 */
+.image {
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    /* 높이는 자동 조정 */
+    object-fit: contain;
+    /* 이미지 비율 유지하면서 영역 안에 맞추기 */
+    border-radius: 8px;
+    animation: fadeIn 2s ease-out;
+}
+
+
+/* Footer 스타일 */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 calc(25% - 20px);
+    /* 각 섹션이 25% 너비로 분배 */
+    margin: 10px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+/* 소셜 링크 */
+.social-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* 반응형 Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}
+
+/* 이미지 갤러리 */
+.image-gallery {
+    width: 100%;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    margin-left: 10px;
+}
+
+.image-container {
+    display: inline-flex;
+    width: max-content;
+}
+
+.image-container img {
+    width: 150px;
+    height: auto;
+    margin-right: 60px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    header {
+        padding: 20px 100px;
+    }
+
+    .main-content {
+        padding: 40px 20px;
+    }
+
+    .section {
+        flex-direction: column;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .text {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .image-gallery {
+        padding: 10px 0;
+    }
+
+    .image-container img {
+        width: 120px;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .contact-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .image-container img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+
+    .image-container img {
+        width: 80px;
+        margin-right: 20px;
+    }
+}
+
+/* About 섹션 이미지 스타일 */
+.section.about .image img {
+    max-width: 300px;
+    /* 최대 너비 300px */
+    max-height: 300px;
+    /* 최대 높이 300px */
+    width: 100%;
+    /* 모바일에서는 부모 요소에 맞게 */
+    height: auto;
+    /* 비율 유지 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
+    display: block;
+    /* 가운데 배치 */
+    border-radius: 8px;
+    /* 모서리를 둥글게 */
+    object-fit: contain;
+    /* 이미지가 비율에 맞게 보이도록 */
+}
+
+
+/* 프로젝트 갤러리 컨테이너 */
+#project-gallery {
+    display: flex;
+    /* 가로 정렬 */
+    flex-wrap: nowrap;
+    /* 요소들이 한 줄에 유지되도록 설정 */
+    overflow-x: auto;
+    /* 좌우 스크롤 활성화 */
+    padding: 10px 0;
+    gap: 10px;
+    /* 프로젝트 간 간격 */
+    scroll-behavior: smooth;
+    /* 부드러운 스크롤 */
+}
+
+/* 개별 프로젝트 폴더 스타일 */
+.project-folder {
+    position: relative;
+    flex: 0 0 150px;
+    /* 최대 너비 150px로 제한 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
+    overflow: hidden;
+}
+
+/* 프로젝트 제목 */
+.project-folder h3 {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 제목이 길 경우 생략 표시 (...) */
+    white-space: nowrap;
+    /* 줄바꿈 방지 */
+}
+
+/* 이미지 스타일 */
+.project-folder img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    /* 겹치도록 이미지 위치 조정 */
+    left: 20px;
+    /* 겹치도록 이미지 위치 조정 */
+    margin-top: 20px;
+    /* 이미지와 제목 간의 간격 조정 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1;
+    background-color: white; /* 흰색 배경 추가 */
+}
+
+/* View More 버튼 */
+.view-more {
+    display: inline-block;
+    margin-top: 90px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.view-more:hover {
+    background-color: #0056b3;
+}
+
+/* 팝업 스타일 */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* 팝업 이미지 스타일 */
+.popup-image {
+    max-width: 300px;
+    /* 기본 크기 */
+    max-height: 300px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    /* 확대 효과 */
+}
+
+.popup-image:hover {
+    max-width: 500px;
+    /* 마우스 오버 시 크기 증가 */
+    max-height: 500px;
+}
+
+
+/* 닫기 버튼 (우측 상단 고정) */
+.fixed-close-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    /* 팝업 위에 표시되도록 높은 z-index 설정 */
+}
+
+.fixed-close-button:hover {
+    color: red;
+}
+
+.category-tabs button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-tabs button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.project-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-folder {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
